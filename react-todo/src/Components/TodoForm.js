@@ -5,17 +5,14 @@ const TodoForm = ({ addTodo }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (value !== "") {
-      addTodo(value);
-      setValue("");
-    } else {
-      alert("Please enter the task !!");
-    }
+    addTodo(value);
+    setValue("");
   };
 
   return (
     <form className="TodoForm" onSubmit={handleSubmit}>
       <input
+        required
         type="text"
         placeholder="Enter the task to be performed"
         className="todo-input"
