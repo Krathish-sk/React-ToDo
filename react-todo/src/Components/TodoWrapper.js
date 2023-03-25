@@ -9,11 +9,13 @@ const TodoWrapper = () => {
   const [todos, setTodos] = useState([]);
 
   const addTodo = (todo) => {
+    localStorage.setItem("lists", todo);
     setTodos([
       ...todos,
       { id: uuidv4(), task: todo, completed: false, isEditing: false },
     ]);
     console.log(todos);
+    console.log(localStorage.getItem("lists"));
   };
 
   const toggleComplete = (id) => {
